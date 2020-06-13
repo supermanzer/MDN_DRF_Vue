@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Custom Apps
+    'custom_auth',  # Custom authentication
+    'catalog',  # Library catalog
     # Core Django Aapps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Django REST Framework
-    'rest_framework'
+    'rest_framework',
 
 ]
 
@@ -88,7 +91,7 @@ DATABASES = {
 # Substituting custom User model
 # https://docs.djangoproject.com/en/3.0/topics/auth/customizing/#substituting-a-custom-user-model
 
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'custom_auth.User'
 
 
 # Password validation
@@ -115,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
