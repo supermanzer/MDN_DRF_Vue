@@ -6,6 +6,12 @@ Whenever I am trying to learn a new element of web development in my full-stack 
 - Use [Django REST Framework](https://www.django-rest-framework.org/) to expose a REST API rather than use built in templates
 - Create a simple [Vue.sj](https://vuejs.org/) SPA front end to consume the REST API
 
+## Motivation
+
+First off, I really enjoy building different web applications and so far Django and Vue represent my favorite server and front-end frameworks. I've used Django REST Framework previously but only as a back-end developer working with a separate front-end developer.
+
+I find the process of building every component in an application that is comprised of isolated back and front ends very illuminating in terms pf the impacts of design decisions. While this little project is pretty basic, the simplicity provides a situation where you can clearly understand how features you implement at the database level impact the user experience you can create in the front-end. Going from the quesiton "I want to display `X` to my users" to "What is the most efficient method to return calculated property `X` from the server" really helps me think through the process of building these apps beyond just trying to expose a feature to get some developer to leave you alone.
+
 ## Organization
 
 - backend/ - This is the Django project (wtih DRF) built by following the MDN Django tutorial (except making REST API endpoints instead of views/templates)
