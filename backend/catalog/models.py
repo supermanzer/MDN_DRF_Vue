@@ -14,14 +14,15 @@ class Genre(models.Model):
 class Book(models.Model):
     """Model represnting a book"""
     title = models.CharField(max_length=200)
-    author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(
+        'Author', on_delete=models.SET_NULL, null=True, related_name='books')
     summary = models.TextField(
         max_length=1e3, help_text="Enter a brief description of the book")
     isbn = models.CharField('ISBN', max_length=13,
                             help_text='13 character ISBN number')
 
     genre = models.ManyToManyField(
-        'Genre', help_text='Select a genre for this book')
+        'Genre', help_text='Select a genre for this book', related_name='books')
 
     def __str__(self):
         return self.title
@@ -51,7 +52,8 @@ class BookInstance(models.Model):
     # DEFINE FIELDS
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                           help_text="Unique iD for this particular book copy.")
-    book = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
+    book = models.ForeignKey(
+        'Book', on_delete=models.SET_NULL, null=True, related_name='copies')
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
     status = models.CharField(max_length=1, choices=LOAN_STATUS,

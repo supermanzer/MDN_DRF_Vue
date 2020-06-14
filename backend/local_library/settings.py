@@ -87,6 +87,56 @@ DATABASES = {
     }
 }
 
+# Logging Server Actions
+# https://docs.djangoproject.com/en/3.0/topics/logging/
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'verbose': {
+#             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+#             'style': '{',
+#         },
+#         'simple': {
+#             'format': '{levelname} {message}',
+#             'style': '{',
+#         },
+#     },
+#     'filters': {
+#         'require_debug_true': {
+#             '()': 'django.utils.log.RequireDebugTrue',
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'filters': ['require_debug_true'],
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'simple'
+#         },
+#         'mail_admins': {
+#             'level': 'ERROR',
+#             'class': 'django.utils.log.AdminEmailHandler',
+
+#         }
+#     },
+#     'loggers': {
+#         # 'django': {
+#         #     'handlers': ['console'],
+#         #     'propagate': True,
+#         # },
+#         # 'django.request': {
+#         #     'handlers': ['mail_admins'],
+#         #     'level': 'ERROR',
+#         #     'propagate': False,
+#         # },
+#         'django.db.backends': {
+#             'level': 'DEBUG',
+#             'handlers': ['console'],
+#             'propagate': False
+#         }
+#     }
+# }
 
 # Substituting custom User model
 # https://docs.djangoproject.com/en/3.0/topics/auth/customizing/#substituting-a-custom-user-model
@@ -138,5 +188,6 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    ],
+    'DEFAULT_FILTER_BACKENDS': ['rest_framework.filters.SearchFilter', 'django_filters.rest_framework.DjangoFilterBackend'],
 }

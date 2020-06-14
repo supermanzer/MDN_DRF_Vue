@@ -15,3 +15,6 @@ env
 
 ### IDE stuff ###
 .vscode
+
+### Front End Vue Stuff ###
+node_modules/
