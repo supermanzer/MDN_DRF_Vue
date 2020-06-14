@@ -10,6 +10,10 @@ class Genre(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def book_count(self):
+        self.books.count()
+
 
 class Book(models.Model):
     """Model represnting a book"""
@@ -29,6 +33,10 @@ class Book(models.Model):
 
     def display_genre(self):
         return ", ".join(genre.name for genre in self.genre.all()[:3])
+
+    @property
+    def display_author(self):
+        return f'{self.author.first_name} {self.author.last_name}'
 
     display_genre.short_description = 'Genre'
 

@@ -9,7 +9,12 @@ Whenever I am trying to learn a new element of web development in my full-stack 
 ## Organization
 
 - backend/ - This is the Django project (wtih DRF) built by following the MDN Django tutorial (except making REST API endpoints instead of views/templates)
-- frontend/ (forthcoming) - This is the Vue.js SPA that will consume the backend server and render an interface for library patrons (staff use Django admin site)
+- frontend/ - This is the Vue.js SPA that will consume the backend server and render an interface for library patrons (staff use Django admin site)
+
+## Vue Front End
+
+I am _really_ basic in my Vue abilities at present so don't get your hopes up but I'm happy to be able to start quickly building out basic components that do the job I expect of them. I'm sure I'll start wanting a more cool and seamless UX that will spur greater development in that direction (I hope). For the time being, I'm just excited to get my list of books rendering like so:
+![Book List](./imgs/booklist.png)
 
 ### Potential Bonus Goal - Async Django Server
 

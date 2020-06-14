@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="nav">
+      <library-nav v-bind:links="nav_links" title="Local Library"></library-nav>
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LibraryNav from "@/components/Nav/NavBar.vue";
+import links from "@/router/links.js";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    "library-nav": LibraryNav,
+  },
+  data() {
+    return {
+      nav_links: links.top_level,
+    };
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>

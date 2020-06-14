@@ -43,12 +43,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Django REST Framework
     'rest_framework',
+    # CORS Headers
+    'corsheaders',
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -87,8 +90,13 @@ DATABASES = {
     }
 }
 
+# Setting CORS Headers for DEV server
+# https://pypi.org/project/django-cors-headers/
+CORS_ORIGIN_ALLOW_ALL = True
+
 # Logging Server Actions
 # https://docs.djangoproject.com/en/3.0/topics/logging/
+# NOt using for now, but feel free to uncomment and check it out
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,
