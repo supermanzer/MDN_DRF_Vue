@@ -1,40 +1,45 @@
 <template>
-  <div class="books-list container">
+  <div class="books container">
     <div class="row">
       <h2>Books</h2>
       <div class="divider"></div>
       <p class="flow-text">
         Below are a list of books carried by your local libary
       </p>
-      <ul class="collection">
-        <li class="collection-item avatar" v-for="book in books" :key="book.id">
-          <i class="material-icons circle">book</i>
-          <span class="title">{{ book.title }}</span>
-          <p>
-            {{ book.display_author }} <br />
-            More stuff goes here
-          </p>
-          <a href="#!" class="secondary-content">
-            <i class="material-icons">grade</i>
-          </a>
-        </li>
-      </ul>
+      <div class="col s6">
+        <ul class="collection">
+          <book-li
+            v-for="book in books"
+            :key="book.id"
+            v-bind:book="book"
+          ></book-li>
+        </ul>
+      </div>
+      <div class="col s6">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import BookListItem from "@/components/Books/BookLi.vue";
 export default {
+  components: {
+    "book-li": BookListItem,
+  },
   data() {
     return {
       books: [],
     };
   },
   mounted() {
-    const url = `${this.$backEnd}books/`;
+    const url = `${this.$backEnd}/books/`;
     this.$http
       .get(url)
-      .then((response) => response.data)
+      .then((response) => {
+        return response.data;
+      })
       .then((data) => {
         this.books = data;
       });

@@ -2,9 +2,14 @@
   <div class="card author-card">
     <div class="card-content">
       <span class="card-title">
-        {{ author.last_name }}, {{ author.first_name }}
+        <router-link :to="{ name: 'Author', params: { id: author.id } }">
+          {{ author.last_name }}, {{ author.first_name }}
+        </router-link>
       </span>
-      <p>{{ author.date_of_birth }} - {{ author.date_of_death }}</p>
+      <p>
+        {{ author.date_of_birth | happyDate }} -
+        {{ author.date_of_death | happyDate }}
+      </p>
     </div>
   </div>
 </template>

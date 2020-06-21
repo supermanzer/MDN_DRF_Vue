@@ -199,3 +199,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_FILTER_BACKENDS': ['rest_framework.filters.SearchFilter', 'django_filters.rest_framework.DjangoFilterBackend'],
 }
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+MEDIA_URL = '/media/'

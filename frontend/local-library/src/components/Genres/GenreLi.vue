@@ -7,10 +7,11 @@
       </span>
     </div>
     <div class="collapsible-body">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis
-      consequuntur quidem odit vero, quod atque! Aspernatur recusandae ab
-      consequatur adipisci unde est iure velit, asperiores, temporibus facilis
-      nobis doloremque! Odio.
+      <ul v-if="genre.books">
+        <li v-for="book in genre.books" :key="book.id">
+          <P>{{ book.title }}</P>
+        </li>
+      </ul>
     </div>
   </li>
 </template>

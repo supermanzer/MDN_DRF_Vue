@@ -5,6 +5,7 @@ Whenever I am trying to learn a new element of web development in my full-stack 
 - Create/Use custom User object for Authentication/Authorization
 - Use [Django REST Framework](https://www.django-rest-framework.org/) to expose a REST API rather than use built in templates
 - Create a simple [Vue.sj](https://vuejs.org/) SPA front end to consume the REST API
+- Utilize [Vuetify](https://vuetifyjs.com/en/) to build out UI components
 
 ## Motivation
 

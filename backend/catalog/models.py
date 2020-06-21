@@ -25,14 +25,15 @@ class Book(models.Model):
     isbn = models.CharField('ISBN', max_length=13,
                             help_text='13 character ISBN number')
 
-    genre = models.ManyToManyField(
+    genres = models.ManyToManyField(
         'Genre', help_text='Select a genre for this book', related_name='books')
+    header_image = models.ImageField(upload_to="images", null=True, blank=True)
 
     def __str__(self):
         return self.title
 
     def display_genre(self):
-        return ", ".join(genre.name for genre in self.genre.all()[:3])
+        return ", ".join(genre.name for genre in self.genres.all()[:3])
 
     @property
     def display_author(self):

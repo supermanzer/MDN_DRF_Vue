@@ -10,6 +10,9 @@
         <author-card v-bind:author="author"></author-card>
       </div>
     </div>
+    <div class="row">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -26,7 +29,7 @@ export default {
     };
   },
   mounted() {
-    const url = `${this.$backEnd}authors/`;
+    const url = `${this.$backEnd}/authors/`;
     this.$http
       .get(url)
       .then((response) => response.data)

@@ -5,7 +5,8 @@
         <h2 class="center">Genres</h2>
         <div class="divider"></div>
         <p class="flow-text">
-          The genres of books carred by your local library
+          The genres of books carred by your local library. Genre categorization
+          is not mutually exclusive.
         </p>
         <ul class="collapsible">
           <genre-li
@@ -32,7 +33,7 @@ export default {
     };
   },
   mounted() {
-    const url = `${this.$backEnd}genres/`;
+    const url = `${this.$backEnd}/genres/`;
     this.$http
       .get(url)
       .then((response) => {

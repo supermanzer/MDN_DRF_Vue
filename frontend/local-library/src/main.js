@@ -4,8 +4,9 @@ import router from "./router";
 import Axios from "axios";
 import "materialize-css/dist/css/materialize.css";
 import M from "materialize-css";
+import "./filters"
 
-const backEnd = "http://127.0.0.1:8000/";
+const backEnd = "http://127.0.0.1:8000";
 
 Vue.config.productionTip = false;
 Vue.prototype.$http = Axios;
