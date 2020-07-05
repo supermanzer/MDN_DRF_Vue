@@ -16,7 +16,9 @@
         </ul>
       </div>
       <div class="col s6">
-        <router-view></router-view>
+        <transition name="fade">
+          <router-view></router-view>
+        </transition>
       </div>
     </div>
   </div>
@@ -51,5 +53,14 @@ export default {
 span.title {
   font-size: larger;
   font-weight: bold;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.75s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

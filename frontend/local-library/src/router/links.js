@@ -10,6 +10,10 @@ export default {
         {
             name: 'Genres',
             to: '/genres'
+        },
+        {
+            name: 'Login',
+            to: '/login'
         }
     ]
 }

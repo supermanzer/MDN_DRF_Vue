@@ -16,15 +16,27 @@ class AuthorViewSet(viewsets.ModelViewSet):
 
     queryset = Author.objects.all()
 
+    def get_serializer_class(self, detail=False):
+        if detail:
+            ser = serializers.AuthorDetailSerializer
+        else:
+            ser = serializers.AuthorListSerializer
+        return ser
+
     def list(self, request):
         queryset = self.queryset
-        serializer = serializers.AuthorListSerializer(queryset, many=True)
+        serializer = self.get_serializer_class()(
+            queryset, many=True, context={'request': request})
         return Response(serializer.data)
 
     def retrieve(self, request, pk=None):
+        # Registering hw ofter a user looks at a particular author
+        n_views = request.session.get('n_views', 0)
+        request.session['n_views'] = n_views + 1
         queryset = self.queryset.prefetch_related('books')
         author = get_object_or_404(queryset, pk=pk)
-        seriailizer = serializers.AuthorDetailSerializer(author)
+        seriailizer = self.get_serializer_class(detail=True)(
+            author, context={'request': request, 'n_views': n_views})
         return Response(seriailizer.data)
 
 
@@ -32,15 +44,24 @@ class BookViewSet(viewsets.ModelViewSet):
 
     queryset = Book.objects.select_related('author').all()
 
+    def get_serializer_class(self, detail=False):
+        if detail:  # if the request contains the id of a Book
+            ser = serializers.BookDetailSerializer
+        else:
+            ser = serializers.BooKListSerializer
+        return ser
+
     def list(self, request):
         queryset = self.queryset
-        serializer = serializers.BookDetailSerializer(queryset, many=True)
-        return Response(serializer.data)
+        serializer = self.get_serializer_class()(
+            queryset, many=True, context={'request': request})
+        return Response(serializer.data, )
 
     def retrieve(self, request, pk=None):
         queryset = self.queryset.prefetch_related('copies')
         book = get_object_or_404(queryset, pk=pk)
-        serializer = serializers.BookDetailSerializer(book)
+        serializer = self.get_serializer_class(detail=True)(
+            book, context={'request': request})
         return Response(serializer.data)
 
 

@@ -7,13 +7,13 @@ class BooKListSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Book
-        fields = ['id', 'url', 'title', 'author']
+        fields = ['id', 'url', 'title', 'author', 'summary']
 
 
 class AuthorListSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Author
-        fields = ['id', 'url', 'fist_name', 'last_name',
+        fields = ['id', 'url', 'first_name', 'last_name',
                   'date_of_birth', 'date_of_death']
 
 
