@@ -13,7 +13,11 @@ First off, I really enjoy building different web applications and so far Django 
 
 I find the process of building every component in an application that is comprised of isolated back and front ends very illuminating in terms pf the impacts of design decisions. While this little project is pretty basic, the simplicity provides a situation where you can clearly understand how features you implement at the database level impact the user experience you can create in the front-end. Going from the quesiton "I want to display `X` to my users" to "What is the most efficient method to return calculated property `X` from the server" really helps me think through the process of building these apps beyond just trying to expose a feature to get some developer to leave you alone.
 
-## Organization
+## Update - 7/5/2020
+
+It seems I may have still bitten off a bit more than I can chew, at least in short easy segments, with the whole DRF Vue thing. My biggest issue seems to be around making the cross site request forgery protections and authentication features play nice together. I still want to understand this but it would take me farther down a rabbit hole that, for now, I don't want to go. With that in mind I've spun off a separate branch `drf_vue` which contains my as yet uncompleted attempt at making Django REST Framework and Vue work together. I will get back to this but for now I will take the incremental approach of using Vue in my Django templates. While I am most excited about building `vue-cli` projects, I want to spend more time understanding Vue itself and dealing with all of these pesky backend <=> frontend issues is distracting me. My template focused work will be in the `dj_tempalte_vue` branch
+
+## Organization - DRF_VUE project
 
 - backend/ - This is the Django project (wtih DRF) built by following the MDN Django tutorial (except making REST API endpoints instead of views/templates)
 - frontend/ - This is the Vue.js SPA that will consume the backend server and render an interface for library patrons (staff use Django admin site)
