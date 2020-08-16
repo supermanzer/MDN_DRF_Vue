@@ -28,11 +28,10 @@ Using the template approach is just too limited. Decided to go all in on fully d
 
 ## Vue Front End
 
-I am _really_ basic in my Vue abilities at present so don't get your hopes up but I'm happy to be able to start quickly building out basic components that do the job I expect of them. I'm sure I'll start wanting a more cool and seamless UX that will spur greater development in that direction (I hope). For the time being, I'm just excited to get my list of books rendering like so:
-![Book List](./imgs/booklist.png)
+I am _really_ basic in my Vue (and Nuxt) abilities at present so don't get your hopes up but I'm happy to be able to start quickly building out basic components that do the job I expect of them. I'm sure I'll start wanting a more cool and seamless UX that will spur greater development in that direction (I hope).
 
 ### Potential Bonus Goal - Async Django Server
 
-I'm not really sure how to do this or what the best way to implement it is (since it's pretty brand new) but since the current version of Django (3.0.7 at the time of this writing) includes support for both synchronous (WSGI) and asynchronous (ASGI) server processes, this might be a useful project in which to attempt to implement them. We should not let a single thread in a single core of our CPU sit idle when there are requests to process!
+I'm not really sure how to do this or what the best way to implement it is (since it's pretty brand new) but since the current version of Django (3.1.0 at the time of this writing) includes support for both synchronous (WSGI) and asynchronous (ASGI) server processes, this might be a useful project in which to attempt to implement them. We should not let a single thread in a single core of our CPU sit idle when there are requests to process!
 
 However, the documentation on this aspect is pretty thin, both on how to implement it and why you would want to, so I don't know if I'll get to it in this project.
