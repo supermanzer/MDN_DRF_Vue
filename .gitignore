@@ -18,3 +18,10 @@ env
 
 ### Front End Vue Stuff ###
 node_modules/
+
+## IDE STUFF
+.vscode
+
+
+### VIRTUAL ENVIRONEMNT STUFF
+Pipfile.lock
