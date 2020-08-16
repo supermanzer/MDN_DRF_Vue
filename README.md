@@ -4,7 +4,7 @@ Whenever I am trying to learn a new element of web development in my full-stack 
 
 - Create/Use custom User object for Authentication/Authorization
 - Use [Django REST Framework](https://www.django-rest-framework.org/) to expose a REST API rather than use built in templates
-- Create a simple [Vue.sj](https://vuejs.org/) SPA front end to consume the REST API
+- Create a simple [Nuxt.jsj](https://nuxtjs.org/) SPA front end to consume the REST API
 - Utilize [Vuetify](https://vuetifyjs.com/en/) to build out UI components
 
 ## Motivation
@@ -16,6 +16,10 @@ I find the process of building every component in an application that is compris
 ## Update - 7/5/2020
 
 It seems I may have still bitten off a bit more than I can chew, at least in short easy segments, with the whole DRF Vue thing. My biggest issue seems to be around making the cross site request forgery protections and authentication features play nice together. I still want to understand this but it would take me farther down a rabbit hole that, for now, I don't want to go. With that in mind I've spun off a separate branch `drf_vue` which contains my as yet uncompleted attempt at making Django REST Framework and Vue work together. I will get back to this but for now I will take the incremental approach of using Vue in my Django templates. While I am most excited about building `vue-cli` projects, I want to spend more time understanding Vue itself and dealing with all of these pesky backend <=> frontend issues is distracting me. My template focused work will be in the `dj_tempalte_vue` branch
+
+## Update 8/16/2020
+
+Using the template approach is just too limited. Decided to go all in on fully de-coupled front and back ends. Using NuxtJS and nuxt/auth to simplify the caching and utilization of Token based authentication with my backend. Currently using DRF built-in Token authentication (unique token per user) but also interested in understanding and using JWT.
 
 ## Organization - DRF_VUE project
 
